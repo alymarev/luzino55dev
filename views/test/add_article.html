@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+<body>
+<!--  Page:Articles-->
+   <div class="container">
+       <aside class="sidebar">
+           <div class="sidebar__logo">
+               <img src="images/Group-1-copy.png" alt="DASHBOARD" class="sidebar__logo__img">
+           </div>
+           <div class="sidebar__menu">
+               <li class="menu__item">
+                   <img src="" alt="">
+                   <a href="#" class="item__trigger">Документы</a>
+               </li>
+               <li class="menu__item">
+                   <img src="" alt="">
+                   <a href="#" class="item__trigger">Статьи</a>
+               </li>
+               <li class="menu__item">
+                   <img src="" alt="">
+                   <a href="#" class="item__trigger">Страницы</a>
+               </li>
+               <li class="menu__item">
+                   <img src="" alt="">
+                   <a href="#" class="item__trigger">Пользователи</a>
+               </li>
+               <li class="menu__item">
+                   <img src="" alt="">
+                   <a href="#" class="item__trigger">Галерея</a>
+               </li>
+               <li class="menu__item">
+                   <img src="" alt="">
+                   <a href="#" class="item__trigger">Новости</a>
+               </li>
+           </div>
+           <div class="user_panel">
+               <div class="user_panel__avatar">
+                   <img src="" alt="" class="avatar__img">
+                   
+               </div>
+               <div class="user_panel__login">JOHN DOE</div>
+           </div>
+       </aside>
+    
+       <main id="content">
+           <header class="header">
+               <h1 class="header__title">
+                   Статьи
+               </h1>
+           </header>
+           <div class="content__settings">
+               <div class="input_container">
+                   <label for="#title" class="label">Заглавие статьи:</label>
+                   <input type="text" class="input">
+               </div>
+               <div class="input_container">
+                   <label for="#title" class="label">Текст статьи:</label>
+                   <textarea name="article_text" id="article_text" cols="30" rows="10"></textarea>
+               </div>
+               <div class="input_container">
+                   <label for="#title" class="label">Описание статьи:</label>
+                   <textarea name="article_desc" id="article_desc" cols="30" rows="10"></textarea>
+               </div>
+               <div class="input_container">
+                   <label for="#title" class="label">Ключевые слова:</label>
+                   <textarea name="article_keywords" id="article_keywords" cols="30" rows="10"></textarea>
+               </div>
+               <a href="#" class="cell__trigger">Сохранить</a>
+           </div>
+       </main>
+   </div>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/jquery.tag-editor.min.js"></script>
+   <script>CKEDITOR.replace('article_text');CKEDITOR.replace('article_desc');$('#article_keywords').tagEditor({ autocomplete: { 'source': '/url/', minLength: 3 } });</script>
+</body>
+</html>

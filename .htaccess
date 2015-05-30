@@ -1,0 +1,16 @@
+# Выключить обработку модулем mod_charset
+<IfModule mod_charset.c>
+CharsetDisable On
+php_value default_charset utf-8
+</IfModule>
+# Выставить кодировку по умолчанию стандартными средствами apache
+AddDefaultCharset UTF-8
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]
+
+<IfModule mod_php5.c>
+php_value upload_max_filesize 8M
+php_value post_max_size 16M
+</IfModule>
