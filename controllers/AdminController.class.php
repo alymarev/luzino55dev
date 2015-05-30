@@ -234,6 +234,7 @@ class AdminController extends Controller{
         $article->load($this->request->id);
         if (!is_null($article)) {
             File::delete($article->link);
+            $article->delete();
         }
         self::redirect(URL::get("docs", "admin"));
     }

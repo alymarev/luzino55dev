@@ -44,8 +44,16 @@ class File {
 
     public static function delete($file, $root = false)
     {
-        if(!$root) $file = $_SERVER["DOCUMENT_ROOT"].$file;
-        if(file_exists($file)) unlink($file);
+        try{
+            $file = explode("/",$file);
+            if(!$root) $file = $_SERVER['DOCUMENT_ROOT']."/docs/".$file[count($file) - 1];;
+            if(file_exists($file)){
+                unlink($file);
+            }
+        }catch (Exception $e){
+            Logger::log($e->getMessage());
+        }
+
     }
 
     public function isExists($file, $root = false){

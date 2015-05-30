@@ -22,6 +22,10 @@ class Docs extends Model
         return self::getAllOnField(self::$table, __CLASS__, "title", $title);
     }
 
+    public function loadOnLink($link){
+        return self::getAllOnField(self::$table, __CLASS__,"link", $link);
+    }
+
     public function postInit()
     {
         $this->link = Config::SITE_ADDRESS."docs/".$this->link;
